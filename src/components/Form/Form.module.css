@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
+  width: 350px;
   height: 100px;
   padding: 10px;
   background-color: rgb(250, 208, 182);
@@ -20,7 +20,7 @@
   margin-left: 20px 10px;
 }
 
-.button {
+button {
   width: 100px;
   background-color: white;
   color: rgb(36, 36, 123);
@@ -28,6 +28,7 @@
   padding: 5px;
   border-radius: 4px;
   outline: none;
+  cursor: pointer;
 }
 button:hover {
   font-weight: 700;
