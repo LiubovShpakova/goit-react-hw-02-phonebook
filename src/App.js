@@ -18,14 +18,23 @@ class App extends Component {
   };
 
   addContact = ({ name, number }) => {
-    const newContact = {
-      id: uuidv4(),
-      name,
-      number,
-    };
-    this.setState(({ contacts }) => ({
-      contacts: [newContact, ...contacts],
-    }));
+    const sameName = this.state.contacts.find((el) => el.name.includes(name));
+    const sameNumber = this.state.contacts.find((el) =>
+      el.number.includes(number)
+    );
+
+    if (sameName || sameNumber) {
+      alert(`${name} or ${number} is already in contacts`);
+    } else {
+      const newContact = {
+        id: uuidv4(),
+        name,
+        number,
+      };
+      this.setState(({ contacts }) => ({
+        contacts: [newContact, ...contacts],
+      }));
+    }
   };
 
   deleteContact = (contactId) => {
